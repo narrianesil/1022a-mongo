@@ -1,0 +1,107 @@
+use("fecinavidb")
+db.dropDatabase("fecinavidb")
+use("fecinavidb")
+db.createCollection("trabalhos");
+
+db.trabalhos.insertMany([
+    {
+        titulos:"A importancia de filmes e series no aprendizado",
+        area:"humanas",
+        autores:[
+            {
+                nome:"Narriane",
+                email:"narriane.silva@ifms.edu.br",
+            }
+        ],
+        dataEnvio:"2024/09/16",
+        avaliadores:[
+            {
+                CPF:"56210418104",
+                Nome:"Edyvaldo",
+                Nota:"10",
+            }
+        ],
+        mediaAvaliacoes:"10",
+    },
+    {
+        titulos:"Empreendedorismo nas escolas",
+        area:"exatas",
+        autores:[
+            {
+                nome:"Clara",
+                email:"clara.silva@ifms.edu.br",
+            }
+        ],
+        dataEnvio:"2024/08/12",
+        avaliadores:[
+            {
+                CPF:"09536815722",
+                Nome:"Valerio",
+                Nota:"09",
+            }
+        ],
+        mediaAvaliacoes:"10",
+    },
+    {
+        titulos:"Empoderamento feminino",
+        area:"humanas",
+        autores:[
+            {
+                nome:"Nicolle",
+                email:"nicolle.silva@ifms.edu.br",
+            }
+        ],
+        dataEnvio:"2024/08/10",
+        avaliadores:[
+            {
+                CPF:"07003553163",
+                Nome:"Josil",
+                Nota:"10",
+            }
+        ],
+        mediaAvaliacoes:"10",
+    },
+    {
+        titulos:"Internet nas escolas",
+        area:"humanas",
+        autores:[
+            {
+                nome:"Tainara",
+                email:"tainara.dias@ifms.edu.br",
+            }
+        ],
+        dataEnvio:"2024/08/10",
+        avaliadores:[
+            {
+                CPF:"07003553163",
+                Nome:"Josil",
+                Nota:"08",
+            }
+        ],
+        mediaAvaliacoes:"10",
+    }
+]);
+
+db.trabalhos.insertOne({
+    titulos:"Plantas carnivoras",
+    area:"Biologicas",
+    autores:[
+        {
+            nome:"Katiely",
+            email:"katiely.santos@ifms.edu.br",
+        }
+    ],
+    dataEnvio:"2024/08/02",
+    avaliadores:[
+        {
+            CPF:"03059825624",
+            Nome:"eDyvaldo",
+            Nota:"10",
+        }
+    ],
+    mediaAvaliacoes:"10",
+})
+
+db.trabalhos.find().pretty();
+
+db.trabalhos.find({area:"Biologicas"}).pretty()
